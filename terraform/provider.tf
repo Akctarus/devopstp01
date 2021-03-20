@@ -1,5 +1,3 @@
-HOLA
-
 terraform {
   required_providers {
     heroku = {
