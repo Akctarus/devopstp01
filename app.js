@@ -1,7 +1,7 @@
 const { json } = require('express');
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 9090;
+const PORT = 3000;
 const winston = require('winston');
 
 const logger = winston.createLogger({
