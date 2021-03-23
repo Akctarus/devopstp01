@@ -1,10 +1,7 @@
 const express = require('express');
 const app = express();
-
 const PORT = process.env.PORT || 9090;
-
 const winston = require('winston');
- 
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.json(),
@@ -18,7 +15,6 @@ const logger = winston.createLogger({
     new winston.transports.File({ filename: 'combined.log' }),
   ],
 });
-
 app.get('/', function(req,res) {
 
     logger.log({
@@ -30,7 +26,6 @@ app.get('/', function(req,res) {
         hello: 'world'
     })
 })
-
 app.listen(PORT, () => {
     console.log('Server listening on ${PORT}')
 })
