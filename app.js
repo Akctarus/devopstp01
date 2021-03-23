@@ -17,15 +17,14 @@ const logger = winston.createLogger({
       new winston.transports.File({ filename: 'combined.log' }),
     ],
   });
- logger.log({
-        level: 'error',
-        message: 'Hello distributed log files!'
-    });
-
 app.get('/', function (req, res) {
     return res.status(200).json({
         hello: 'world'
     });
+});
+logger.log({
+    level: 'error',
+    message: 'Hello distributed log files!'
 });
 
 app.listen(PORT, () => {
